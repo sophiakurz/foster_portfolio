@@ -94,11 +94,9 @@ function Hero() {
       <div className="container hero-inner">
         <div>
           <p className="hero-kicker">Carpenter & Woodworker</p>
-          <h1>Your Name</h1>
+          <h1>Foster Townsend</h1>
           <p className="hero-subtitle">
-            I design and build <span className="accent">custom furniture</span>,
-            fitted storage, and timber features tailored to your home or
-            business.
+            description
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn primary">
