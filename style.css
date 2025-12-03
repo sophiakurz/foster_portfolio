@@ -331,4 +331,61 @@ body {
 /* Footer */
 
 .site-footer {
-  border-top:
+  border-top: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.95);
+  padding: 1.4rem 0 1.8rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.footer-inner a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 0.78rem;
+}
+
+/* Responsive tweaks */
+
+@media (max-width: 720px) {
+  .header-inner {
+    gap: 0.5rem;
+  }
+
+  .nav {
+    display: none; /* keep it simple; you can add a burger menu later */
+  }
+
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+}
+
+/* Light mode */
+
+body.light {
+  --bg: #f9fafb;
+  --bg-alt: #f3f4f6;
+  --card-bg: #ffffff;
+  --text: #111827;
+  --accent: #2563eb;
+  --muted: #4b5563;
+  --border: #e5e7eb;
+  background: radial-gradient(circle at top, #eef2ff, #f9fafb);
+}
