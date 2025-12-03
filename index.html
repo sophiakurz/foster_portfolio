@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" data-animate>
     <div class="container header-inner">
       <a href="#top" class="logo">Your<span>Workshop</span></a>
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#projects">Work</a>
-        <a href="#skills">Services</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
       <button id="theme-toggle" aria-label="Toggle dark mode">🪵</button>
@@ -24,7 +24,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
-        <div>
+        <div data-animate>
           <p class="hero-kicker">Carpenter & Woodworker</p>
           <h1>Your Name</h1>
           <p class="hero-subtitle">
@@ -35,21 +35,29 @@
             <a href="#projects" class="btn primary">View My Work</a>
             <a href="#contact" class="btn ghost">Request a Quote</a>
           </div>
+          <p class="hero-note">
+            Fully insured · Free site visits · Serving [Your Area]
+          </p>
         </div>
-        <div class="hero-card">
+        <div class="hero-card" data-animate>
           <!-- Replace with your image if you like -->
           <div class="avatar-placeholder">🪚</div>
           <p class="hero-tagline">
             Based in [Your City]. Available for bespoke carpentry, renovations,
             and small commercial projects.
           </p>
+          <ul class="hero-badges">
+            <li>10+ completed projects</li>
+            <li>Made-to-measure designs</li>
+            <li>Quality timber & finishes</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- About -->
     <section id="about" class="section">
-      <div class="container">
+      <div class="container" data-animate>
         <h2>About</h2>
         <p>
           I’m a carpenter and woodworker based in [Your City], creating
@@ -64,56 +72,80 @@
     <!-- Projects -->
     <section id="projects" class="section section-alt">
       <div class="container">
-        <h2>Recent Work</h2>
+        <div class="section-header" data-animate>
+          <h2>Recent Work</h2>
+          <p>Browse a selection of bespoke pieces and fitted projects.</p>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="filters" data-animate>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="furniture">Furniture</button>
+          <button class="filter-btn" data-filter="storage">Storage</button>
+          <button class="filter-btn" data-filter="outdoor">Outdoor</button>
+        </div>
+
         <div class="grid">
-          <article class="card">
+          <article class="card project-card" data-category="furniture" data-animate>
             <h3>Custom Oak Dining Table</h3>
             <p>
               Solid oak dining table with a natural oil finish and steel hairpin
               legs. Designed to seat six comfortably while fitting a compact
               open-plan kitchen.
             </p>
-            <p class="tags">Solid oak · Hand-finished · Bespoke size</p>
+            <p class="tags">Furniture · Solid oak · Hand-finished</p>
             <div class="card-links">
-              <a href="#" target="_blank" rel="noopener">View Photos</a>
+              <button class="btn-link project-details" data-project="table">
+                View details
+              </button>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card project-card" data-category="storage" data-animate>
             <h3>Fitted Wardrobes & Alcove Units</h3>
             <p>
               Built-in wardrobes and living-room alcove units with shaker doors,
               soft-close hinges, and adjustable shelving to maximise storage in
               a Victorian terrace.
             </p>
-            <p class="tags">Built-in storage · MDF & pine · Spray painted</p>
+            <p class="tags">Storage · MDF & pine · Spray painted</p>
             <div class="card-links">
-              <a href="#" target="_blank" rel="noopener">View Photos</a>
+              <button class="btn-link project-details" data-project="wardrobes">
+                View details
+              </button>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card project-card" data-category="outdoor" data-animate>
             <h3>Garden Decking & Pergola</h3>
             <p>
               Pressure-treated timber decking with integrated seating and a
               simple pergola frame, creating a practical outdoor space for
               summer dining.
             </p>
-            <p class="tags">Decking · Pergola · Exterior carpentry</p>
+            <p class="tags">Outdoor · Decking · Pergola</p>
             <div class="card-links">
-              <a href="#" target="_blank" rel="noopener">View Photos</a>
+              <button class="btn-link project-details" data-project="decking">
+                View details
+              </button>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills / Services -->
-    <section id="skills" class="section">
+    <!-- Services -->
+    <section id="services" class="section">
       <div class="container">
-        <h2>Services</h2>
+        <div data-animate>
+          <h2>Services</h2>
+          <p>
+            I work closely with you from first idea to final installation,
+            making sure each project suits your space, budget, and day-to-day life.
+          </p>
+        </div>
         <div class="skills-grid">
-          <div>
+          <div data-animate>
             <h3>Carpentry & Joinery</h3>
             <ul>
               <li>Bespoke furniture (tables, desks, shelving)</li>
@@ -122,12 +154,12 @@
               <li>Decking, pergolas & exterior timber work</li>
             </ul>
           </div>
-          <div>
+          <div data-animate>
             <h3>How I Work</h3>
             <ul>
-              <li>Site visits & measurements</li>
+              <li>Site visits & precise measurements</li>
               <li>Design sketches and material advice</li>
-              <li>Clear pricing and timelines</li>
+              <li>Clear pricing and realistic timelines</li>
               <li>Careful installation and tidy finish</li>
             </ul>
           </div>
@@ -137,7 +169,7 @@
 
     <!-- Contact -->
     <section id="contact" class="section section-alt">
-      <div class="container">
+      <div class="container" data-animate>
         <h2>Contact</h2>
         <p>
           Have a project in mind? Send a message with a few details about your
@@ -154,6 +186,19 @@
       </div>
     </section>
   </main>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Modal for project details -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="Close details">×</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-body"></p>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
