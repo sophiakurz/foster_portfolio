@@ -352,4 +352,63 @@ function App() {
   // Back-to-top visibility
   useEffect(() => {
     const onScroll = () => {
-      setShowBackToTop(window.
+      setShowBackToTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Modal
+  const selectedProject = PROJECTS.find(
+    (p) => p.id === selectedProjectId
+  );
+
+  function openProject(id) {
+    setSelectedProjectId(id);
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProject() {
+    setSelectedProjectId(null);
+    document.body.style.overflow = "";
+  }
+
+  // Smooth scroll for header nav
+  const handleNavClick = (id) => (e) => {
+    e.preventDefault();
+    const el = document.querySelector(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", id);
+    }
+  };
+
+  return (
+    <>
+      <Header
+        onNavClick={handleNavClick}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
+      <main>
+        <Hero />
+        <About />
+        <Projects
+          filter={filter}
+          setFilter={setFilter}
+          openProject={openProject}
+        />
+        <Services />
+        <Contact />
+      </main>
+      <Footer />
+      <Modal project={selectedProject} onClose={closeProject} />
+      <BackToTop visible={showBackToTop} />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+);
+root.render(<App />);
