@@ -3,7 +3,7 @@ const { useState, useEffect } = React;
 const PROJECTS = [
   {
     id: "table",
-    title: "Custom Oak Dining Table",
+    title: "project 1",
     category: "furniture",
     short:
       "Solid oak dining table with a natural oil finish and modern steel legs.",
@@ -18,7 +18,7 @@ const PROJECTS = [
   },
   {
     id: "wardrobes",
-    title: "Fitted Wardrobes & Alcove Units",
+    title: "project 2",
     category: "storage",
     short:
       "Built-in wardrobes and alcove units that turn unused corners into storage.",
@@ -33,7 +33,7 @@ const PROJECTS = [
   },
   {
     id: "decking",
-    title: "Garden Decking & Pergola",
+    title: "project 3",
     category: "outdoor",
     short:
       "Level decking and a simple pergola to create a usable outdoor living area.",
@@ -130,11 +130,7 @@ function About() {
       <div className="container">
         <h2>About</h2>
         <p>
-          I’m a carpenter and woodworker based in [Your City], creating
-          made-to-measure pieces that are built to last. From fitted wardrobes
-          and alcove units to custom tables and shelving, I combine traditional
-          techniques with modern tools to deliver clean, sturdy finishes that
-          fit your space and style.
+          I’m a carpenter and woodworker based in New York City
         </p>
       </div>
     </section>
