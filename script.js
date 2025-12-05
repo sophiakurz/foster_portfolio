@@ -60,7 +60,7 @@ function Header({ onNavClick, theme, toggleTheme }) {
     <header className="site-header">
       <div className="container header-inner">
         <a href="#top" className="logo" onClick={onNavClick("#top")}>
-          Your<span>Workshop</span>
+          Foster<span>Townsend</span>
         </a>
         <nav className="nav">
           <a href="#about" onClick={onNavClick("#about")}>
